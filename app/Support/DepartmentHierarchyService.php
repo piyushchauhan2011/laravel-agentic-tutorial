@@ -36,7 +36,7 @@ class DepartmentHierarchyService
      */
     public function getDescendants(int $departmentId): Collection
     {
-        $query = "
+        $query = '
             WITH RECURSIVE dept_descendants AS (
                 SELECT id, name, parent_id, level, description, 0 as depth
                 FROM departments
@@ -49,7 +49,7 @@ class DepartmentHierarchyService
             SELECT * FROM dept_descendants
             WHERE id != ?
             ORDER BY depth, name
-        ";
+        ';
 
         // First binding: CTE anchor (WHERE id = ?), second: exclude root from results (WHERE id != ?)
         return collect(DB::select($query, [$departmentId, $departmentId]));
@@ -60,7 +60,7 @@ class DepartmentHierarchyService
      */
     public function getAncestors(int $departmentId): Collection
     {
-        $query = "
+        $query = '
             WITH RECURSIVE dept_ancestors AS (
                 SELECT id, name, parent_id, level, description, 0 as distance
                 FROM departments
@@ -73,7 +73,7 @@ class DepartmentHierarchyService
             SELECT * FROM dept_ancestors
             WHERE id != ?
             ORDER BY distance DESC
-        ";
+        ';
 
         // First binding: CTE anchor (WHERE id = ?), second: exclude self from results (WHERE id != ?)
         return collect(DB::select($query, [$departmentId, $departmentId]));
@@ -84,7 +84,7 @@ class DepartmentHierarchyService
      */
     public function getDepthStats(): Collection
     {
-        $query = "
+        $query = '
             WITH RECURSIVE dept_depth AS (
                 SELECT id, name, parent_id, 0 as depth
                 FROM departments
@@ -98,7 +98,7 @@ class DepartmentHierarchyService
             FROM dept_depth
             GROUP BY depth
             ORDER BY depth
-        ";
+        ';
 
         return collect(DB::select($query));
     }
@@ -108,7 +108,7 @@ class DepartmentHierarchyService
      */
     public function getPipelineFunnel(): Collection
     {
-        $query = "
+        $query = '
             WITH stage_counts AS (
                 SELECT current_stage as stage, COUNT(*) as total
                 FROM applications
@@ -117,7 +117,7 @@ class DepartmentHierarchyService
             SELECT stage, total
             FROM stage_counts
             ORDER BY total DESC
-        ";
+        ';
 
         return collect(DB::select($query));
     }

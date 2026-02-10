@@ -65,7 +65,7 @@ class Department extends Model
      */
     public function getDescendants()
     {
-        $query = "
+        $query = '
             WITH RECURSIVE dept_tree AS (
                 SELECT id, name, parent_id, level, description
                 FROM departments
@@ -77,7 +77,7 @@ class Department extends Model
             )
             SELECT * FROM dept_tree WHERE id != ?
             ORDER BY level, name
-        ";
+        ';
 
         return DB::select($query, [$this->id, $this->id]);
     }
@@ -89,7 +89,7 @@ class Department extends Model
      */
     public function getAncestors()
     {
-        $query = "
+        $query = '
             WITH RECURSIVE dept_ancestors AS (
                 SELECT id, name, parent_id, level, description
                 FROM departments
@@ -101,7 +101,7 @@ class Department extends Model
             )
             SELECT * FROM dept_ancestors WHERE id != ?
             ORDER BY level, name
-        ";
+        ';
 
         return DB::select($query, [$this->id, $this->id]);
     }
@@ -113,7 +113,7 @@ class Department extends Model
      */
     public static function getDepthStats()
     {
-        $query = "
+        $query = '
             WITH RECURSIVE dept_depth AS (
                 SELECT id, name, parent_id, 0 as depth
                 FROM departments
@@ -127,7 +127,7 @@ class Department extends Model
             FROM dept_depth
             GROUP BY depth
             ORDER BY depth
-        ";
+        ';
 
         return collect(DB::select($query));
     }

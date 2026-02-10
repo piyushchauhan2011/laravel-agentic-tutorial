@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Models\Candidate;
-use App\Models\Company;
 use App\Models\Department;
 use App\Models\Feedback;
 use App\Models\Referral;
