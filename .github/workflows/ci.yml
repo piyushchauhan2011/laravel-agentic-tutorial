@@ -92,4 +92,4 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run browser tests
-        run: ./vendor/bin/pest tests/Browser --without-tty
+        run: ./vendor/bin/pest tests/Browser
