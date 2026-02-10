@@ -50,6 +50,7 @@
     <section class="ats-shell p-4 mb-4">
         <h2 class="h5">Operations & Observability</h2>
         <div class="d-flex flex-wrap gap-2 mt-3">
+            <a class="btn btn-sm btn-primary" href="{{ route('positions.index') }}">Positions</a>
             <a class="btn btn-sm btn-primary" href="/admin">Filament Admin</a>
             <a class="btn btn-sm btn-outline-primary" href="/horizon">Horizon</a>
             <a class="btn btn-sm btn-outline-primary" href="/telescope">Telescope</a>

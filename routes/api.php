@@ -11,5 +11,5 @@ Route::prefix('v1')->group(function (): void {
 
 Route::prefix('v1')->middleware('auth:sanctum')->group(function (): void {
     Route::get('/metrics/pipeline', PipelineMetricsController::class)->name('api.v1.metrics.pipeline');
-    Route::apiResource('positions', PositionController::class);
+    Route::apiResource('positions', PositionController::class)->names('api.v1.positions');
 });
