@@ -1,4 +1,6 @@
 {
+    "name": "laravel-agentic-tutorial",
+    "version": "0.0.0",
     "$schema": "https://www.schemastore.org/package.json",
     "private": true,
     "type": "module",
