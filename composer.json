@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
+        "behat/behat": "4.x-dev",
         "fakerphp/faker": "^1.23",
         "filament/filament": "^5.2",
         "laravel/boost": "^2.1",
