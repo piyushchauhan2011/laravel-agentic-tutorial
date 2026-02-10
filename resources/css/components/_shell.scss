@@ -1,0 +1,10 @@
+@use "../tools/mixins";
+
+.ats-shell {
+    @include mixins.ats-surface-card;
+}
+
+.ats-title {
+    color: var(--ats-secondary);
+    letter-spacing: 0.01em;
+}

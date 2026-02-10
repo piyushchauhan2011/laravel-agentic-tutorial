@@ -1,0 +1,21 @@
+@use "../settings/tokens" as tokens;
+
+:root {
+    --ats-bg: #{tokens.$ats-color-background};
+    --ats-surface: #{tokens.$ats-color-surface};
+    --ats-text: #{tokens.$ats-color-text};
+    --ats-muted: #{tokens.$ats-color-muted};
+    --ats-primary: #{tokens.$ats-color-primary};
+    --ats-secondary: #{tokens.$ats-color-secondary};
+    --ats-accent: #{tokens.$ats-color-accent};
+    --ats-border: #{tokens.$ats-color-border};
+    --ats-shadow-soft: #{tokens.$ats-shadow-soft};
+    --ats-radius-lg: #{tokens.$ats-radius-lg};
+    --ats-radius-md: #{tokens.$ats-radius-md};
+}
+
+body {
+    background: radial-gradient(circle at top right, tokens.$ats-gradient-start 0%, tokens.$ats-gradient-end 45%);
+    color: var(--ats-text);
+    min-height: 100vh;
+}

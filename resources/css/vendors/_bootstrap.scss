@@ -1,0 +1,24 @@
+@use "../settings/tokens" as tokens;
+@use "bootstrap/scss/bootstrap" with (
+    $primary: tokens.$ats-color-primary,
+    $secondary: tokens.$ats-color-secondary,
+    $success: tokens.$ats-color-success,
+    $info: tokens.$ats-color-info,
+    $warning: tokens.$ats-color-warning,
+    $danger: tokens.$ats-color-danger,
+    $light: #f4efe6,
+    $dark: #2f2f2f,
+    $body-bg: tokens.$ats-color-background,
+    $body-color: tokens.$ats-color-text,
+    $border-color: tokens.$ats-color-border,
+    $border-radius: 0.75rem,
+    $border-radius-lg: tokens.$ats-radius-lg,
+    $card-bg: tokens.$ats-color-surface,
+    $card-border-color: tokens.$ats-color-border,
+    $input-bg: tokens.$ats-color-surface,
+    $input-border-color: tokens.$ats-color-border,
+    $input-focus-border-color: tokens.$ats-color-accent,
+    $input-btn-focus-color-opacity: 0.2,
+    $input-btn-focus-color: rgba(122, 79, 40, 0.25),
+    $component-active-bg: tokens.$ats-color-primary
+);

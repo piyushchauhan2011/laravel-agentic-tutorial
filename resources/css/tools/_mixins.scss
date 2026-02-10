@@ -1,0 +1,6 @@
+@mixin ats-surface-card {
+    border: 1px solid var(--ats-border);
+    border-radius: var(--ats-radius-lg);
+    background: var(--ats-surface);
+    box-shadow: var(--ats-shadow-soft);
+}

@@ -1,0 +1,18 @@
+.btn-primary {
+    --bs-btn-bg: var(--ats-primary);
+    --bs-btn-border-color: var(--ats-primary);
+    --bs-btn-hover-bg: var(--ats-secondary);
+    --bs-btn-hover-border-color: var(--ats-secondary);
+    --bs-btn-active-bg: var(--ats-secondary);
+    --bs-btn-active-border-color: var(--ats-secondary);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--ats-secondary);
+    --bs-btn-border-color: rgba(84, 51, 16, 0.45);
+    --bs-btn-hover-bg: var(--ats-secondary);
+    --bs-btn-hover-border-color: var(--ats-secondary);
+    --bs-btn-hover-color: #fffdf8;
+    --bs-btn-active-bg: var(--ats-secondary);
+    --bs-btn-active-border-color: var(--ats-secondary);
+}
