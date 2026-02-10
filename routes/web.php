@@ -3,8 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\ApplicationController as WebApplicationController;
 use App\Http\Controllers\Web\CandidateController as WebCandidateController;
-use App\Http\Controllers\Web\PipelineMetricsController as WebPipelineMetricsController;
 use App\Http\Controllers\Web\PipelineController as WebPipelineController;
+use App\Http\Controllers\Web\PipelineMetricsController as WebPipelineMetricsController;
 use App\Http\Controllers\Web\PositionController as WebPositionController;
 use App\Models\Application;
 use App\Models\Candidate;
