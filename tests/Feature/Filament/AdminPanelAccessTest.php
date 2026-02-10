@@ -32,7 +32,11 @@ it('shows database learning page in filament for admins', function (): void {
     $admin = User::factory()->create();
     $admin->assignRole('admin');
 
-    $this->actingAs($admin)->get('/admin/learning/database')->assertSuccessful();
+    $this->actingAs($admin)
+        ->get('/admin/learning/database')
+        ->assertSuccessful()
+        ->assertSee('Relationship Patterns')
+        ->assertSee('CTE Query Patterns');
 });
 
 it('forbids viewers from accessing the filament panel', function (): void {
