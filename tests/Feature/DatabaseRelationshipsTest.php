@@ -5,7 +5,6 @@ use App\Models\Company;
 use App\Models\Department;
 use App\Models\Feedback;
 use App\Models\Interview;
-use App\Models\Offer;
 use App\Models\Position;
 use App\Models\Referral;
 use App\Models\Skill;
