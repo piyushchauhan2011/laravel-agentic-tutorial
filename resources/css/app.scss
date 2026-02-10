@@ -1,0 +1,42 @@
+@use "bootstrap/scss/bootstrap";
+
+:root {
+    --ats-bg: #f4f6f8;
+    --ats-surface: #ffffff;
+    --ats-primary: #0f766e;
+    --ats-secondary: #334155;
+    --ats-accent: #d97706;
+}
+
+body {
+    background: radial-gradient(circle at top right, #dff7f4 0%, var(--ats-bg) 45%);
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+.ats-shell {
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: var(--ats-surface);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.ats-title {
+    color: var(--ats-secondary);
+    letter-spacing: 0.01em;
+}
+
+.ats-chip {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background: rgba(15, 118, 110, 0.12);
+    color: var(--ats-primary);
+}
+
+.ats-card {
+    border: none;
+    border-radius: 0.9rem;
+    background: linear-gradient(160deg, #ffffff 0%, #f8fafc 100%);
+}
