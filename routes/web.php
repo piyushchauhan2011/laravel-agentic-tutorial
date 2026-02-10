@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\ApplicationController as WebApplicationController;
 use App\Http\Controllers\Web\CandidateController as WebCandidateController;
+use App\Http\Controllers\Web\DatabaseLearningController as WebDatabaseLearningController;
 use App\Http\Controllers\Web\PipelineController as WebPipelineController;
 use App\Http\Controllers\Web\PipelineMetricsController as WebPipelineMetricsController;
 use App\Http\Controllers\Web\PositionController as WebPositionController;
@@ -24,6 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/learn/database', WebDatabaseLearningController::class)->name('learn.database');
     Route::get('/metrics/pipeline', WebPipelineMetricsController::class)->name('web.metrics.pipeline');
 
     Route::get('/positions', [WebPositionController::class, 'index'])->name('positions.index');

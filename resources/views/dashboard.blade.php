@@ -54,6 +54,7 @@
             <a class="btn btn-sm btn-primary" href="{{ route('candidates.index') }}">Candidates</a>
             <a class="btn btn-sm btn-primary" href="{{ route('applications.index') }}">Applications</a>
             <a class="btn btn-sm btn-primary" href="{{ route('pipelines.index') }}">Pipeline Board</a>
+            <a class="btn btn-sm btn-primary" href="{{ route('learn.database') }}">Database Learning</a>
             <a class="btn btn-sm btn-primary" href="/admin">Filament Admin</a>
             <a class="btn btn-sm btn-outline-primary" href="/horizon">Horizon</a>
             <a class="btn btn-sm btn-outline-primary" href="/telescope">Telescope</a>

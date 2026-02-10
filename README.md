@@ -26,6 +26,7 @@ Open:
 
 - App: `https://laravel-agentic-tutorial.ddev.site`
 - Dashboard: `/dashboard`
+- Database learning: `/learn/database`
 - Filament: `/admin`
 - Horizon: `/horizon`
 - Telescope: `/telescope`

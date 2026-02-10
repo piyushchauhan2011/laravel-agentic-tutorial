@@ -28,6 +28,13 @@ it('allows recruiters to access the filament panel', function (): void {
     $this->actingAs($recruiter)->get('/admin')->assertSuccessful();
 });
 
+it('shows database learning page in filament for admins', function (): void {
+    $admin = User::factory()->create();
+    $admin->assignRole('admin');
+
+    $this->actingAs($admin)->get('/admin/learning/database')->assertSuccessful();
+});
+
 it('forbids viewers from accessing the filament panel', function (): void {
     $viewer = User::factory()->create();
     $viewer->assignRole('viewer');
