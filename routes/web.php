@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/applications', [WebApplicationController::class, 'index'])->name('applications.index');
     Route::post('/applications', [WebApplicationController::class, 'store'])->name('applications.store');
     Route::get('/pipelines', [WebPipelineController::class, 'index'])->name('pipelines.index');
+    Route::get('/relationships', [\App\Http\Controllers\Web\RelationshipsController::class, 'index'])->name('relationships.index');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
