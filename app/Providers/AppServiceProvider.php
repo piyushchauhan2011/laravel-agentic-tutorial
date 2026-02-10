@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Application;
+use App\Models\Candidate;
 use App\Models\Position;
+use App\Policies\ApplicationPolicy;
+use App\Policies\CandidatePolicy;
 use App\Policies\PositionPolicy;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Gate;
@@ -24,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Gate::policy(Application::class, ApplicationPolicy::class);
+        Gate::policy(Candidate::class, CandidatePolicy::class);
         Gate::policy(Position::class, PositionPolicy::class);
 
         Relation::morphMap([

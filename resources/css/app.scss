@@ -40,3 +40,15 @@ body {
     border-radius: 0.9rem;
     background: linear-gradient(160deg, #ffffff 0%, #f8fafc 100%);
 }
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--ats-primary), #14b8a6);
+    color: #ecfeff;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.ats-pipeline-column {
+    min-width: 260px;
+    flex: 1 0 260px;
+}

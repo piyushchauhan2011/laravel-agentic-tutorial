@@ -2,10 +2,10 @@
 
 namespace App\Jobs;
 
+use App\Support\PipelineMetrics;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 
 class BuildPipelineMetricsJob implements ShouldQueue
 {
@@ -22,24 +22,9 @@ class BuildPipelineMetricsJob implements ShouldQueue
     /**
      * Execute the job.
      */
-    public function handle(): void
+    public function handle(PipelineMetrics $pipelineMetrics): void
     {
-        $sql = <<<'SQL'
-            WITH stage_counts AS (
-                SELECT current_stage, COUNT(*) AS total
-                FROM applications
-                GROUP BY current_stage
-            )
-            SELECT current_stage, total
-            FROM stage_counts
-            ORDER BY total DESC, current_stage ASC
-        SQL;
-
-        $snapshot = collect(DB::select($sql))
-            ->map(fn (object $row) => [
-                'stage' => $row->current_stage,
-                'total' => (int) $row->total,
-            ])
+        $snapshot = $pipelineMetrics->funnel()
             ->values()
             ->all();
 
