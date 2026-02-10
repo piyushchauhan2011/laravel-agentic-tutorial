@@ -142,6 +142,55 @@
     </section>
 
     <section class="ats-shell p-4">
+        <h2 class="h5">Alpine.js Playground</h2>
+        <div
+            x-data="{
+                showTips: false,
+                nextCandidate: 1,
+                quickStages: ['applied', 'screening'],
+                addStage() {
+                    const sequence = ['applied', 'screening', 'interview', 'offer', 'hired'];
+                    const next = sequence[this.quickStages.length] ?? 'hired';
+                    this.quickStages.push(next);
+                },
+                reset() {
+                    this.showTips = false;
+                    this.nextCandidate = 1;
+                    this.quickStages = ['applied', 'screening'];
+                },
+            }"
+        >
+            <p class="text-secondary mb-3">Use this as a quick reference for Alpine state, list rendering, and event handling.</p>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <button class="btn btn-sm btn-outline-primary" type="button" @click="nextCandidate++">
+                    Next Candidate #<span x-text="nextCandidate"></span>
+                </button>
+                <button class="btn btn-sm btn-outline-secondary" type="button" @click="showTips = !showTips">
+                    <span x-text="showTips ? 'Hide Tips' : 'Show Tips'"></span>
+                </button>
+                <button class="btn btn-sm btn-outline-success" type="button" @click="addStage()">Add Stage</button>
+                <button class="btn btn-sm btn-outline-danger" type="button" @click="reset()">Reset</button>
+            </div>
+
+            <div class="mb-3" x-show="showTips">
+                <div class="alert alert-info mb-0">
+                    Tip: this block is toggled with <code>x-show</code> and button events.
+                </div>
+            </div>
+
+            <div>
+                <h3 class="h6">Sample Stage Progression</h3>
+                <div class="d-flex flex-wrap gap-2">
+                    <template x-for="(stage, index) in quickStages" :key="`${stage}-${index}`">
+                        <span class="badge text-bg-primary text-uppercase" x-text="stage"></span>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ats-shell p-4 mt-4">
         <h2 class="h5">API</h2>
         <p class="mb-1">Versioned ATS API is available under <code>/api/v1</code>.</p>
         <p class="mb-0">Example: <code>GET /api/v1/positions</code> and <code>GET /api/v1/metrics/pipeline</code></p>
